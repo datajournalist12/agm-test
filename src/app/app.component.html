@@ -1,10 +1,8 @@
-<agm-map (mapClick)="mapClick(waypoints)" [latitude]="lat" [longitude]="lng">
+<agm-map [latitude]="lat" [longitude]="lng">
   <agm-polyline [strokeColor]="'blue'">
-    <!-- <div *ngFor="let waypoint of waypoints"> -->
-       <agm-polyline-point *ngFor="let waypoint of waypoints" [latitude]="waypoint.lat" [longitude]="waypoint.lng"></agm-polyline-point>
-    <!-- </div> -->
+    <div *ngFor="let waypoint of waypoints">
+       <agm-polyline-point *ngIf="boolean" [latitude]="waypoint.lat" [longitude]="waypoint.lng"></agm-polyline-point>
+    </div>
   </agm-polyline>
 </agm-map>
-
-<!-- *ngIf="boolean" -->
 
